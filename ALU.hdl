@@ -41,5 +41,41 @@ CHIP ALU {
         ng;      // if (out < 0)  equals 1, else 0
 
     PARTS:
-    //// Replace this comment with your code.
+        // nx chip
+    Xor(a=x[0], b=nx, out=negx0);
+    Xor(a=x[1], b=nx, out=negx1);
+    Xor(a=x[2], b=nx, out=negx2);
+    Xor(a=x[3], b=nx, out=negx3);
+    Xor(a=x[4], b=nx, out=negx4);
+    Xor(a=x[5], b=nx, out=negx5);
+    Xor(a=x[6], b=nx, out=negx6);
+    Xor(a=x[7], b=nx, out=negx7);
+    Xor(a=x[8], b=nx, out=negx8);
+    Xor(a=x[9], b=nx, out=negx9);
+    Xor(a=x[10], b=nx, out=negx10);
+    Xor(a=x[11], b=nx, out=negx11);
+    Xor(a=x[12], b=nx, out=negx12);
+    Xor(a=x[13], b=nx, out=negx13);
+    Xor(a=x[14], b=nx, out=negx14);
+    Xor(a=x[15], b=nx, out=negx15);
+
+    Add16(
+        a[0]=negx0, b[0]=nx,
+        a[1]=negx1,
+        a[2]=negx2,
+        a[3]=negx3,
+        a[4]=negx4,
+        a[5]=negx5,
+        a[6]=negx6,
+        a[7]=negx7,
+        a[8]=negx8,
+        a[9]=negx9,
+        a[10]=negx10,
+        a[11]=negx11,
+        a[12]=negx12,
+        a[13]=negx13,
+        a[14]=negx14,
+        a[15]=negx15,
+        out=out
+    );
 }
