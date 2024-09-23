@@ -41,23 +41,63 @@ CHIP ALU {
         ng;      // if (out < 0)  equals 1, else 0
 
     PARTS:
-        // nx chip
-    Xor(a=x[0], b=nx, out=negx0);
-    Xor(a=x[1], b=nx, out=negx1);
-    Xor(a=x[2], b=nx, out=negx2);
-    Xor(a=x[3], b=nx, out=negx3);
-    Xor(a=x[4], b=nx, out=negx4);
-    Xor(a=x[5], b=nx, out=negx5);
-    Xor(a=x[6], b=nx, out=negx6);
-    Xor(a=x[7], b=nx, out=negx7);
-    Xor(a=x[8], b=nx, out=negx8);
-    Xor(a=x[9], b=nx, out=negx9);
-    Xor(a=x[10], b=nx, out=negx10);
-    Xor(a=x[11], b=nx, out=negx11);
-    Xor(a=x[12], b=nx, out=negx12);
-    Xor(a=x[13], b=nx, out=negx13);
-    Xor(a=x[14], b=nx, out=negx14);
-    Xor(a=x[15], b=nx, out=negx15);
+    //// Replace this comment with your code.
+
+    // zx chip
+    Not(in=zx, out=notzx);
+    And16(
+        a=x,
+        b[0]=notzx,
+        b[1]=notzx,
+        b[2]=notzx,
+        b[3]=notzx,
+        b[4]=notzx,
+        b[5]=notzx,
+        b[6]=notzx,
+        b[7]=notzx,
+        b[8]=notzx,
+        b[9]=notzx,
+        b[10]=notzx,
+        b[11]=notzx,
+        b[12]=notzx,
+        b[13]=notzx,
+        b[14]=notzx,
+        b[15]=notzx,
+        out[0]=outnx0,
+        out[1]=outnx1,
+        out[2]=outnx2,
+        out[3]=outnx3,
+        out[4]=outnx4,
+        out[5]=outnx5,
+        out[6]=outnx6,
+        out[7]=outnx7,
+        out[8]=outnx8,
+        out[9]=outnx9,
+        out[10]=outnx10,
+        out[11]=outnx11,
+        out[12]=outnx12,
+        out[13]=outnx13,
+        out[14]=outnx14,
+        out[15]=outnx15,
+    );
+
+    // nx chip
+    Xor(a=outnx0, b=nx, out=negx0);
+    Xor(a=outnx1, b=nx, out=negx1);
+    Xor(a=outnx2, b=nx, out=negx2);
+    Xor(a=outnx3, b=nx, out=negx3);
+    Xor(a=outnx4, b=nx, out=negx4);
+    Xor(a=outnx5, b=nx, out=negx5);
+    Xor(a=outnx6, b=nx, out=negx6);
+    Xor(a=outnx7, b=nx, out=negx7);
+    Xor(a=outnx8, b=nx, out=negx8);
+    Xor(a=outnx9, b=nx, out=negx9);
+    Xor(a=outnx10, b=nx, out=negx10);
+    Xor(a=outnx11, b=nx, out=negx11);
+    Xor(a=outnx12, b=nx, out=negx12);
+    Xor(a=outnx13, b=nx, out=negx13);
+    Xor(a=outnx14, b=nx, out=negx14);
+    Xor(a=outnx15, b=nx, out=negx15);
 
     Add16(
         a[0]=negx0, b[0]=nx,
