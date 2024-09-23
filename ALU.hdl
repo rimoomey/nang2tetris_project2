@@ -116,6 +116,82 @@ CHIP ALU {
         a[13]=negx13,
         a[14]=negx14,
         a[15]=negx15,
-        out=out
+        out=outx
+    );
+
+    // zy chip
+    Not(in=zy, out=notzy);
+    And16(
+        a=y,
+        b[0]=notzy,
+        b[1]=notzy,
+        b[2]=notzy,
+        b[3]=notzy,
+        b[4]=notzy,
+        b[5]=notzy,
+        b[6]=notzy,
+        b[7]=notzy,
+        b[8]=notzy,
+        b[9]=notzy,
+        b[10]=notzy,
+        b[11]=notzy,
+        b[12]=notzy,
+        b[13]=notzy,
+        b[14]=notzy,
+        b[15]=notzy,
+        out[0]=outny0,
+        out[1]=outny1,
+        out[2]=outny2,
+        out[3]=outny3,
+        out[4]=outny4,
+        out[5]=outny5,
+        out[6]=outny6,
+        out[7]=outny7,
+        out[8]=outny8,
+        out[9]=outny9,
+        out[10]=outny10,
+        out[11]=outny11,
+        out[12]=outny12,
+        out[13]=outny13,
+        out[14]=outny14,
+        out[15]=outny15,
+    );
+
+    // ny chip
+    Xor(a=outny0, b=nx, out=negy0);
+    Xor(a=outny1, b=ny, out=negy1);
+    Xor(a=outny2, b=ny, out=negy2);
+    Xor(a=outny3, b=ny, out=negy3);
+    Xor(a=outny4, b=ny, out=negy4);
+    Xor(a=outny5, b=ny, out=negy5);
+    Xor(a=outny6, b=ny, out=negy6);
+    Xor(a=outny7, b=ny, out=negy7);
+    Xor(a=outny8, b=ny, out=negy8);
+    Xor(a=outny9, b=ny, out=negy9);
+    Xor(a=outny10, b=ny, out=negy10);
+    Xor(a=outny11, b=ny, out=negy11);
+    Xor(a=outny12, b=ny, out=negy12);
+    Xor(a=outny13, b=ny, out=negy13);
+    Xor(a=outny14, b=ny, out=negy14);
+    Xor(a=outny15, b=ny, out=negy15);
+
+    Add16(
+        a[0]=negy0, b[0]=ny,
+        a[1]=negy1,
+        a[2]=negy2,
+        a[3]=negy3,
+        a[4]=negy4,
+        a[5]=negy5,
+        a[6]=negy6,
+        a[7]=negy7,
+        a[8]=negy8,
+        a[9]=negy9,
+        a[10]=negy10,
+        a[11]=negy11,
+        a[12]=negy12,
+        a[13]=negy13,
+        a[14]=negy14,
+        a[15]=negy15,
+        out=outy
     );
 }
