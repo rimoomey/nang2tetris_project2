@@ -342,4 +342,42 @@ CHIP ALU {
     Xor(a=outF13, b=no, out=out[13]);
     Xor(a=outF14, b=no, out=out[14]);
     Xor(a=outF15, b=no, out=out[15]);
+
+    // no chip + zr
+    Xor(a=outF0, b=no, out=outForzr0);
+    Xor(a=outF1, b=no, out=outForzr1);
+    Xor(a=outF2, b=no, out=outForzr2);
+    Xor(a=outF3, b=no, out=outForzr3);
+    Xor(a=outF4, b=no, out=outForzr4);
+    Xor(a=outF5, b=no, out=outForzr5);
+    Xor(a=outF6, b=no, out=outForzr6);
+    Xor(a=outF7, b=no, out=outForzr7);
+    Xor(a=outF8, b=no, out=outForzr8);
+    Xor(a=outF9, b=no, out=outForzr9);
+    Xor(a=outF10, b=no, out=outForzr10);
+    Xor(a=outF11, b=no, out=outForzr11);
+    Xor(a=outF12, b=no, out=outForzr12);
+    Xor(a=outF13, b=no, out=outForzr13);
+    Xor(a=outF14, b=no, out=outForzr14);
+    Xor(a=outF15, b=no, out=outForzr15);
+
+    Or(a=outForzr0, b=outForzr1, out=zero1);
+    Or(a=zero1, b=outForzr2, out=zero2);
+    Or(a=zero2, b=outForzr3, out=zero3);
+    Or(a=zero3, b=outForzr4, out=zero4);
+    Or(a=zero4, b=outForzr5, out=zero5);
+    Or(a=zero5, b=outForzr6, out=zero6);
+    Or(a=zero6, b=outForzr7, out=zero7);
+    Or(a=zero7, b=outForzr8, out=zero8);
+    Or(a=zero8, b=outForzr9, out=zero9);
+    Or(a=zero9, b=outForzr10, out=zero10);
+    Or(a=zero10, b=outForzr11, out=zero11);
+    Or(a=zero11, b=outForzr12, out=zero12);
+    Or(a=zero12, b=outForzr13, out=zero13);
+    Or(a=zero13, b=outForzr14, out=zero14);
+    Or(a=zero14, b=outForzr15, out=notZr);
+    Not(in=notZr, out=zr);
+
+    // no chip + ng 
+    Xor(a=outF15, b=no, out=ng);
 }
